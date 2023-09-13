@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { HomePage } from './pages/Home/Home.page';
 import { LoginPage } from './pages/Login/Login.page';
-import { Layout } from './layout/layout';
+import { Layout } from './layout/Layout';
 // import { LocalStorageService } from './services/User/LocalStorage.service';
 
 // if(!LocalStorageService.get('users')) {
