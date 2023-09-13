@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:18 as construcao
 
 WORKDIR /applicacao/
 
@@ -6,6 +6,10 @@ COPY . .
 
 RUN npm i
 
-EXPOSE 5000
+RUN npm run build
 
-CMD [  "npm", "run", "dev"]
+FROM nginx:alpine as servidor
+
+COPY --from=construcao /applicacao/dist   /usr/share/nginx/html
+
+EXPOSE 80
